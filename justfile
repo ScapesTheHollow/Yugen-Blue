@@ -10,7 +10,7 @@ init:
 install:
     #!/usr/bin/env bash
     rm -rf ~/.config/hyde/themes/{{theme}}
-    env FORCE_THEME_UPDATE=true Hyde theme import "{{theme}}" "{{cwd}}"
+    env FORCE_THEME_UPDATE=true Hyde theme import "{{theme}}" "{{cwd}}" || ~/HyDE/Scripts/themepatcher.sh
     # BUG: sometimes when imported locally, Configs folder is not copied over
     mkdir -p ~/.config/hyde/themes/{{theme}}
     cp -r Configs/.config/hyde/themes/{{theme}}/. ~/.config/hyde/themes/{{theme}}/.
